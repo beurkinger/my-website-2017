@@ -1,0 +1,36 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "My personal website.",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beurkinger/PersonalWebsite.git"
+  },
+  "keywords": [
+    "Goehringer"
+  ],
+  "author": "Thibault Goehringer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beurkinger/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/beurkinger/PersonalWebsite#readme",
+  "dependencies": {
+    "inferno": "^1.5.6",
+    "inferno-component": "^1.5.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-inferno": "^3.1.0",
+    "babel-preset-latest": "^6.24.0",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
