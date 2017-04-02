@@ -1,21 +1,29 @@
 import Inferno, { linkEvent } from 'inferno';
 import Component from 'inferno-component';
 
+import Foreground from './Foreground';
+import Background from './Background';
+
 class Main extends Component {
 
   constructor(props) {
 		super(props);
 
-    this.state = {
-      text : "Hello, my name is Thibault'. I'm very happy to be with you today. I hope you are having a great time.",
-			tones : []
-		};
+    this.state.mouseX = -1;
+    this.state.mouseY = -1;
+
+    this.handleMove = this.handleMove.bind(this);
 	}
+
+  handleMove (e) {
+    this.setState({mouseX : e.clientX, mouseY : e.clientY});
+  }
 
 	render () {
 		return (
-      <div>
-        yolo
+      <div id="app">
+        <Background mouseX={this.state.mouseX} mouseY={this.state.mouseY} />
+        <Foreground moveHandler={this.handleMove} />
       </div>
     );
 	}
