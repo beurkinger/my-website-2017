@@ -39,7 +39,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 #foreground h1 {
   font: bold 56px Roboto, Helvetica, Sans-Serif;
   letter-spacing: -3px;
-  background: rgba(255, 2555, 255, 1);
+  background: rgba(255, 2555, 255, 0.8);
   padding: 30px;
   /*display: inline-block;*/
   width: 30%;
@@ -55,11 +55,11 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 }
 
 #foreground p {
-  font: normal 20px Roboto, Helvetica, Sans-Serif;
-  background: rgba(255, 2555, 255, 1);
+  font: normal 14px Roboto, Helvetica, Sans-Serif;
+  background: rgba(255, 2555, 255, 0.8);
   letter-spacing: 1px;
   padding: 30px;
-  line-height: 140%;
+  line-height: 130%;
   width: 30%;
   margin: 0 auto;
 }

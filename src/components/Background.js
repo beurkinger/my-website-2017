@@ -2,7 +2,7 @@ import Inferno, { linkEvent } from 'inferno';
 import Component from 'inferno-component';
 
 const GRID_SIZE = 33;
-const MAX_DROP_SIZE = 30;
+const MAX_DROP_SIZE = 10;
 const MAX_DEVIATION = 8;
 
 class Background extends Component {
@@ -32,8 +32,8 @@ class Background extends Component {
     window.onresize = this.handleResize;
   }
 
-  shouldComponentUpdate () {
-    this.paint();
+  shouldComponentUpdate (nextProps) {
+    this.paint(this.props, nextProps);
     return false;
   }
 
@@ -57,6 +57,7 @@ class Background extends Component {
     buffer.ctx.fillStyle = '#FFF';
     buffer.ctx.fill();
     buffer.ctx.closePath();
+    return;
     buffer.ctx.lineWidth = 1;
     buffer.ctx.strokeStyle = '#000';
     buffer.ctx.beginPath();
@@ -74,12 +75,29 @@ class Background extends Component {
 
   }
 
-  paint () {
+  paint (oldProps, nextProps) {
     requestAnimationFrame(() => {
       let radius = Math.random() * MAX_DROP_SIZE;
       let xDev = parseInt(Math.random() * MAX_DEVIATION) - MAX_DEVIATION / 2 - 1;
       let yDev = parseInt(Math.random() * MAX_DEVIATION) - MAX_DEVIATION / 2 - 1;
       let color = 'lightblue';
+      this.buffers.front.ctx.globalCompositeOperation = 'destination-out'
+
+      console.log(oldProps.mouseX);
+      console.log(nextProps.mouseX);
+      this.buffers.front.ctx.beginPath();
+      this.buffers.front.ctx.moveTo(oldProps.mouseX, oldProps.mouseY);
+      this.buffers.front.ctx.lineTo(nextProps.mouseX, nextProps.mouseY);
+      this.buffers.front.ctx.lineWidth = MAX_DROP_SIZE;
+      this.buffers.front.ctx.strokeStyle = color;
+      this.buffers.front.ctx.lineCap = 'round';
+      this.buffers.front.ctx.stroke();
+
+
+
+      this.refresh();
+      return;
+      console.log('yo');
       this.buffers.front.ctx.beginPath();
       this.buffers.front.ctx.globalCompositeOperation = 'destination-out'
       this.buffers.front.ctx.arc(this.props.mouseX + xDev, this.props.mouseY + yDev, radius, 0, Math.PI * 2, true);
@@ -100,13 +118,14 @@ class Background extends Component {
   }
 
   refresh () {
-    // this.ctx.drawImage(this.buffers.back.canvas, 0, 0);
     let size = MAX_DROP_SIZE * 2 + MAX_DEVIATION * 2;
     let x = this.props.mouseX - size / 2;
     let y = this.props.mouseY - size / 2 ;
-    this.ctx.clearRect(x, y, size, size);
-    // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.ctx.drawImage(this.buffers.front.canvas, x, y, size, size, x, y, size, size);
+    // this.ctx.clearRect(x, y, size, size);
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.drawImage(this.buffers.front.canvas, 0, 0);
+
+    // this.ctx.drawImage(this.buffers.front.canvas, x, y, size, size, x, y, size, size);
   }
 
   handleResize () {
