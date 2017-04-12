@@ -1,0 +1,27 @@
+[class*='grid'],
+[class*='col-'] {
+  box-sizing: border-box;
+}
+
+.row {
+    display: block; padding: 0; width: 100%;
+}
+
+.row:after {
+  content: "";
+	display: block; width: 0; height: 0;
+	clear: both;
+}
+
+.col-1-2 {
+  float: left;
+  width: 48%;
+}
+
+.col-1-2:first-child {
+  margin-right: 2%;
+}
+
+.col-1-2:last-child {
+  margin-left: 2%;
+}

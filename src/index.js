@@ -1,5 +1,5 @@
 import Inferno from 'inferno';
 
-import Main from './components/Main';
+import App from './components/App';
 
-Inferno.render(<Main />, document.getElementById('root'));
+Inferno.render(<App />, document.getElementById('root'));
