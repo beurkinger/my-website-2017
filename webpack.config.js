@@ -10,7 +10,7 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 var plugins = [HTMLWebpackPluginConfig];
-var outputFilename = 'transformed.js';
+var outputFilename = 'js/transformed.js';
 var outputPath = __dirname + '/build';
 
 if (production) {
@@ -25,7 +25,7 @@ if (production) {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin()
   ];
-  outputFilename = 'transformed-mini.js';
+  outputFilename = 'js/transformed-mini.js';
 }
 
 module.exports = {

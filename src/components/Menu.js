@@ -4,17 +4,17 @@ const Menu = props => (
   <nav id ="menu">
     <ul>
       <li>
-        <a href="#">
+        <a href="#about">
           About
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#projects">
           Projects
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#contact">
           Contact
         </a>
       </li>
