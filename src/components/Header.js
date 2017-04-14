@@ -3,7 +3,7 @@ import Inferno from 'inferno';
 import Menu from './Menu';
 
 const Header = props => (
-  <header id="main-header">
+  <header id="header">
     <div class="titles">
       <h1>
         Hi, my name is<br/>
