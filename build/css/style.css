@@ -13,7 +13,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-body {
+body, input, textarea, button {
   font: lighter 16px Roboto, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 120%;
 }
@@ -51,7 +51,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   /*padding: 200px 0;*/
 }
 
-#main-container, #footer {
+#main-container {
   background: rgba(255, 2555, 255, 0.6);
   box-shadow: 0px 0px 10px 0px rgba(239,239,239,0.5);
   width: 90%;
@@ -65,14 +65,14 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 
 #header {
   box-sizing: border-box;
-  padding: 40px 60px;
+  padding: 40px 60px 20px 60px;
 }
 
 /*header:after {
   display:block;
   content: " ";
   border-bottom: 1px solid black;
-  margin-top: 30px;
+  margin-top: 60px;
 }*/
 
 #header .titles {
@@ -138,7 +138,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   letter-spacing: 2px;
 }
 
-#main a {
+#main a, #footer a {
   color: inherit;
 }
 
@@ -149,7 +149,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 #main p, #main li {
 }
 
-#main p {
+#main p, #main ul, #main input, #main textarea, #main button {
   margin: 20px 0;
 }
 
@@ -166,7 +166,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 #main .divider {
   display: block;
   position: relative;
-  margin: 60px auto 80px auto;
+  margin: 60px auto 40px auto;
   padding-bottom: 8px;
 }
 
@@ -198,19 +198,58 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   margin-bottom: 20px;
 }
 
+#contact .no-bots-please, #main .no-bots-please div {
+  display: inline-block;
+  font-weight: bold;
+}
+
+#contact input, #contact textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 1px solid #000;
+  padding: 10px 14px;
+}
+
+#contact textarea {
+  height: 200px;
+}
+
+#contact button {
+  display: inline-block;
+  width: auto;
+  padding: 10px 60px;
+  border: 1px solid #000;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+#contact button:hover {
+  background: #000;
+  color: #FFF;
+}
+
+#contact strong {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 #footer {
   background: transparent;
   box-shadow: none;
   margin-bottom: 60px;
+  text-align: center;
+
 }
 
 #footer p {
   font-size: 12px;
-  text-align: center;
+  /*display: inline-block;
+  border: 1px solid black;
+  padding: 20px 40px;*/
 }
 
 @media handheld, only screen and (max-width: 767px) {
-  #main-container, #footer {
+  #main-container {
 		width: 100%;
 		min-width: 0;
     box-shadow: 0 0 0 0 #FFF;
