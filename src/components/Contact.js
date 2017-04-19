@@ -30,7 +30,7 @@ class Contact extends Component {
         <textarea value={this.state.message}
                   onInput={linkEvent(this, (s, e) => s.setState({ message : e.target.value}))}
                   placeholder="Type your message here"></textarea>
-        <button>Send</button>
+                <button>Send</button>
       </form>
     )
   }
@@ -42,7 +42,7 @@ class Contact extends Component {
   }
 
   getThanks () {
-    return <p><strong>Your message has been sent !</strong></p>
+    return <p><strong>Your message has been sent. Thanks !</strong></p>
   }
 
   handleSubmit (self, e) {
