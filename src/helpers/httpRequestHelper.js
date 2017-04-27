@@ -5,16 +5,16 @@ const httpRequestHelper = (url, success, fail) => {
   xhr.onload = function() {
     if (xhr.status === 200 && xhr.readyState === 4 && xhr.getResponseHeader('content-type') !== 'text/html') {
       let response = JSON.parse(xhr.responseText);
-      success(response);
+      if (success && typeof success === 'function') success(response);
       xhr = null;
     }
     else {
-      fail(xhr.status + ':' + xhr.response);
+      if (fail && typeof fail === 'function') fail(xhr.status + ':' + xhr.response);
       xhr = null;
     }
   }
   xhr.onerror = function (e) {
-    fail(e.target.status);
+    if (fail && typeof fail === 'function') fail(e.target.status);
     xhr = null;
   }
   xhr.send(null);
