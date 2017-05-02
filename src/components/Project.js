@@ -1,12 +1,7 @@
 import Inferno from 'inferno';
-import {IMG_PATH} from '../constants';
 
 const Project = props => (
   <div class="project">
-    <img src={IMG_PATH + props.picSmall}/>
-    <h3>
-      {props.title}
-    </h3>
     <p class="desc">
       {props.desc}
     </p>

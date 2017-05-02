@@ -1,6 +1,6 @@
 [
   {
-    "title" : "Map Prototype for the Gaîté Nomade",
+    "title" : "Gaîté Nomade",
     "picSmall" : "gaite.jpg",
     "picLarge" : "gaite.jpg",
     "desc" : "A website prototype I made with a very talented graphic designer friend for La Gaîté Lyrique (a parisian digital arts and modern music centre). It allows to locate events on a geolocalised map made from topographic data. The informations appears in windows that can be dragged around, closed and maximized.",

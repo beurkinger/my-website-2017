@@ -17,18 +17,20 @@ const ProjectSelector = props => {
     let i = props.selected + 1;
     if ( i <= props.projects.length - 1) props.changeHandler(i);
   };
-
   return (
     <div class="selector">
-      <button class="previous" onClick={ handlePrevious }>
-        {"<<"}
-      </button>
       <select value={props.selected} onChange={ e => props.changeHandler(e.target.value) }>
         {props.projects.map(getOption)}
       </select>
-      <button class="next" onClick={ handleNext }>
-        {">>"}
-      </button>
+      <div class="arrows">
+        <button class="previous" onClick={ handlePrevious }>
+          {"<<"}
+        </button>
+        {props.selected + 1} / {props.projects.length}
+        <button class="next" onClick={ handleNext }>
+          {">>"}
+        </button>
+      </div>
     </div>
   )
 }
