@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 // const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-const production = false;
+const production = true;
 
 // var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 //   template: __dirname + '/src/index.html',

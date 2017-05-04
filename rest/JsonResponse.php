@@ -7,12 +7,12 @@ class JsonReponse {
 
   function __construct ($content, $code = 200) {
     $this->content = $content;
-    $this->$code = $code;
+    $this->code = $code;
   }
 
   public function send() {
-    header('Content-type: application/json');
     http_response_code($this->code);
+    header('Content-type: application/json');
     echo json_encode($this->content);
   }
 }
