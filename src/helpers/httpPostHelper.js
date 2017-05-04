@@ -1,7 +1,12 @@
-const httpRequestHelper = (url, success, fail) => {
+const httpPostHelper = (url, data, success, fail) => {
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", url, true);
-  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  xhr.open("POST", url, true);
+
+  let formData = new FormData();
+  for (var key in data) {
+    formData.append(key, data[key]);
+  }
+
   xhr.onload = function() {
     if (xhr.status === 200 && xhr.readyState === 4 && xhr.getResponseHeader('content-type') !== 'text/html') {
       try {
@@ -21,7 +26,7 @@ const httpRequestHelper = (url, success, fail) => {
     if (fail && typeof fail === 'function') fail(e.target.status);
     xhr = null;
   }
-  xhr.send(null);
+  xhr.send(formData);
 };
 
-module.exports = httpRequestHelper;
+module.exports = httpPostHelper;

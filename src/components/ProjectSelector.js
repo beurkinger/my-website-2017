@@ -26,7 +26,7 @@ const ProjectSelector = props => {
         <button class="previous" onClick={ handlePrevious }>
           {"<<"}
         </button>
-        {props.selected + 1} / {props.projects.length}
+        <span>{props.selected + 1} / {props.projects.length}</span>
         <button class="next" onClick={ handleNext }>
           {">>"}
         </button>

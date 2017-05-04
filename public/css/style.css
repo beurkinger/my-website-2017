@@ -171,6 +171,20 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   padding: 5px 0;
 }
 
+#main button {
+  display: inline-block;
+  width: auto;
+  margin-top: 10px;
+  padding: 10px 60px;
+  border: 1px solid #000;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+#main button:hover {
+  background: #000;
+  color: #FFF;
+}
+
 #main .divider {
   display: block;
   position: relative;
@@ -210,14 +224,24 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   position: relative;
 }
 
+#projects .projects-browser {
+  border: 1px solid #000;
+  margin: 30px 0;
+  background: #FFF;
+}
+
 #projects .selector {
-  border-width: 1px;
+  /*border-width: 1px;
   border-color: #000;
-  border-style: solid;
+  border-style: solid;*/
   overflow: hidden;
   /*padding: 0 8px 0 20px;*/
   /*border: 1Px solid #000;
   padding: 12px 8px;*/
+}
+
+#projects .selector * {
+    vertical-align: middle;
 }
 
 #projects .selector:after {
@@ -236,7 +260,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   display: inline-block;
   padding: 0;
   border: 0;
-  margin: 8px 8px 8px 20px;
+  margin: 20px 0 0 20px;
 }
 
 #projects .selector select:hover {
@@ -246,37 +270,83 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 #projects .arrows {
   /*display: inline-block;*/
   float: right;
-  vertical-align: middle;
-  margin: 8px 0 8px 8px;
+  margin: 17px 20px 20px 20px;
 }
+
 
 #projects .arrows button {
   display: inline-block;
   margin: 0;
   padding: 0 20px;
-  outline: 0;
-  vertical-align: middle;
+  /*border: 0;
+  box-shadow: none;*/
+}
+
+#projects .arrows span {
+  margin: 0 20px;
 }
 
 #projects .arrows button:hover {
-  font-weight: bold;
-  cursor: pointer;
+  /*color: #000; background: transparent;*/
 }
 
 #projects .project-pic {
-  display: block;
-  margin: 20px auto;
+  position: relative;
+  line-height: 0;
+  margin: 20px 20px 0 20px
 }
 
-#projects .project-pic img {
-  display: block;
+#projects .project-pic:hover::after {
+  position: absolute; top: calc(50% - 40px); left: calc(50% - 40px);
+  text-align: center;
+  width: 80px;;
+  content:"\2609";
+  line-height: 100%;
+  font-size: 80px;
+  font-weight: bolder;
+  pointer-events: none;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+}
+
+#projects .project-pic .pic-small {
   width: 100%; height: auto;
-  /*filter: grayscale(100%) contrast(120%);*/
 }
 
-#projects .project img:hover {
-  filter: none;
+#projects .project-pic .pic-small:hover {
+  cursor: zoom-in;
 }
+
+#projects .project-pic .large-container {
+  z-index: 100;
+  display: block;
+  box-sizing: border-box;
+  position: fixed; top:0; left: 0;
+  width: 100%; height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  text-align: center;
+  background: #FFF;
+}
+
+#projects .project-pic .large-exit {
+  position: fixed; top:10px; right:15px;
+  background: #FFF;
+  margin: 0;
+  padding-left: 30px; padding-right: 30px;
+}
+
+#projects .project-pic .large-exit:hover {
+  background: #000;
+}
+
+#projects .project-pic .pic-large {
+  display: inline;
+  max-width: 100%;
+  height: auto;
+  background: #EEE;
+}
+
 
 #projects .project .desc {
   box-sizing: border-box;
@@ -322,7 +392,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   height: 200px;
 }
 
-#contact button {
+/*#contact button {
   display: inline-block;
   width: auto;
   margin-top: 10px;
@@ -334,7 +404,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 #contact button:hover {
   background: #000;
   color: #FFF;
-}
+}*/
 
 #contact strong {
   text-decoration: underline;
@@ -392,5 +462,13 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 
   #main {
     padding: 40px;
+  }
+
+  #projects .arrows {
+    float: none;
+  }
+
+  #projects .project .desc, #projects .project ul {
+    margin: 20px 0;
   }
 }

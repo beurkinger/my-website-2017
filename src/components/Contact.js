@@ -2,6 +2,9 @@ import Inferno from 'inferno';
 import {linkEvent} from 'inferno';
 import Component from 'inferno-component';
 import Email from './Email';
+import httpPostHelper from '../helpers/httpPostHelper';
+import {REST_CONTACT_PATH} from '../constants';
+
 
 class Contact extends Component {
 
@@ -11,6 +14,7 @@ class Contact extends Component {
     this.state = {
       email : '',
       message : '',
+      isSending : false,
       error : false,
       errorMessage : '',
       sent : false
@@ -26,13 +30,19 @@ class Contact extends Component {
         <input  type="email"
                 value={this.state.email}
                 onInput={linkEvent(this, (s, e) => s.setState({ email : e.target.value}))}
-                placeHolder="Your email address"/>
+                placeHolder="Your email address"
+                required />
         <textarea value={this.state.message}
                   onInput={linkEvent(this, (s, e) => s.setState({ message : e.target.value}))}
-                  placeholder="Type your message here"></textarea>
-                <button>Send</button>
+                  placeholder="Type your message here"
+                  required ></textarea>
+        <button type="submit">{this.getButtonText()}</button>
       </form>
     )
+  }
+
+  getButtonText () {
+    return this.state.isSending ? 'Sending...' : 'Send';
   }
 
   getErrorMessage () {
@@ -47,18 +57,29 @@ class Contact extends Component {
 
   handleSubmit (self, e) {
     e.preventDefault();
-    let isError = false;
-    if (!self.state.email || self.state.email.length < 6 ||
-        self.state.email.search('@') === -1 || self.state.email.search('.') === -1) {
-      self.setState({error : true, errorMessage : 'Please verify your email address.'});
+    let state = self.state;
+    if (state.isSending) return false;
+    self.setState({isSending : true});
+    if (!state.email || state.email.length < 6 ||
+        state.email.search('@') === -1 || state.email.search('.') === -1) {
+      self.setState({isSending: false, error : true, errorMessage : 'Please verify your email address.'});
     }
-    else if (!self.state.message || self.state.message.length < self.MIN_CHAR ) {
-      self.setState({error : true, errorMessage : 'Your message must be at least ' + self.MIN_CHAR + ' characters long.'});s
+    else if (!state.message || state.message.length < self.MIN_CHAR ) {
+      self.setState({isSending: false, error : true, errorMessage : 'Your message must be at least ' + self.MIN_CHAR + ' characters long.'});s
     }
     else {
-      self.setState({error : false, sent : true});
+      self.sendData(state);
     }
     return false;
+  }
+
+  sendData (state) {
+    httpPostHelper(REST_CONTACT_PATH, state, () => {
+      this.setState({error : false, isSending : false, sent : true});
+    },
+    () => {
+      this.setState({error : true, errorMessage : 'There was an error. Please verify the form and try again.', isSending : false, sent : false});
+    });
   }
 
   render () {

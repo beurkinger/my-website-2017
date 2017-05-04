@@ -1,9 +1,10 @@
 import Inferno from 'inferno';
 import Component from 'inferno-component';
 import httpRequestHelper from '../helpers/httpRequestHelper';
-import Project from './Project';
+import ProjectDetails from './ProjectDetails';
 import ProjectPic from './ProjectPic';
 import ProjectSelector from './ProjectSelector';
+import {REST_PROJECTS_PATH} from '../constants';
 
 class Projects extends Component {
 
@@ -17,9 +18,9 @@ class Projects extends Component {
   }
 
   componentDidMount () {
-    httpRequestHelper('build/data/projects.json',
+    httpRequestHelper(REST_PROJECTS_PATH,
     data => this.setState({ projects : data }),
-    error => console.log(error))
+    error => console.error(error))
   }
 
   handleChange (i) {
@@ -34,10 +35,10 @@ class Projects extends Component {
     }
   }
 
-  getProject () {
+  getProjectDetails () {
     if (this.state.projects.length > 0 && this.state.projects[this.state.selected]) {
       let data = this.state.projects[this.state.selected];
-      return <Project title={data.title}
+      return <ProjectDetails title={data.title}
                       desc={data.desc}
                       techno={data.techno}
                       link={data.link}
@@ -55,12 +56,14 @@ class Projects extends Component {
           project in the list to see it, or use the arrow flip through
           all the projects.
         </p>
-        { this.getProjectPic() }
-        <ProjectSelector  projects={this.state.projects}
-                          selected={this.state.selected}
-                          changeHandler={this.handleChange}
-                           />
-        { this.getProject() }
+        <div class="projects-browser">
+          { this.getProjectPic() }
+          <ProjectSelector  projects={this.state.projects}
+                            selected={this.state.selected}
+                            changeHandler={this.handleChange}
+                             />
+        </div>
+        { this.getProjectDetails() }
       </section>
     )
   }
