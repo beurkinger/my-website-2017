@@ -1,10 +1,11 @@
 import Inferno from 'inferno';
 import {linkEvent} from 'inferno';
+import ProjectSelect from './ProjectSelect';
 
-const ProjectSelector = props => {
-  const getOption = (project, i) => {
-    return <option value={i}>{project.title}</option>
-  };
+const ProjectBrowser = props => {
+  // const getOption = (project, i) => {
+  //   return <option value={i}>{project.title}</option>
+  // };
 
   const handlePrevious = (e) => {
     e.preventDefault();
@@ -18,10 +19,10 @@ const ProjectSelector = props => {
     if ( i <= props.projects.length - 1) props.changeHandler(i);
   };
   return (
-    <div class="selector">
-      <select value={props.selected} onChange={ e => props.changeHandler(e.target.value) }>
-        {props.projects.map(getOption)}
-      </select>
+    <div class="browser">
+      <ProjectSelect  options={props.projects}
+                      value={props.selected}
+                      changeHandler={props.changeHandler}/>
       <div class="arrows">
         <button class="previous" onClick={ handlePrevious }>
           {"<<"}
@@ -35,4 +36,8 @@ const ProjectSelector = props => {
   )
 }
 
-module.exports = ProjectSelector;
+// <select value={props.selected} onChange={ e => props.changeHandler(e.target.value) }>
+//   {props.projects.map(getOption)}
+// </select>
+
+module.exports = ProjectBrowser;

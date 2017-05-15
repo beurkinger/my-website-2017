@@ -3,54 +3,54 @@
     "title" : "Wikicreation",
     "picSmall" : "wikicreation-small.jpg",
     "picLarge" : "wikicreation-large.jpg",
-    "desc" : "A website I worked on for the Paris 1 Pantheon Sorbonne University. It's a single-page, multi-languages React application which communicates with a RESTful wordpress backend. I coded all the front-end (except for the graph on the main page), and wrote some parts of the backend (mainly the SQL requests and the handling of the contact forms).",
+    "desc" : "A website I worked on for the Paris 1 Pantheon Sorbonne University. It's a single-page, multi-language React application which communicates with a RESTful wordpress backend. I coded all the front-end (except for the graph on the main page), and wrote some parts of the backend (mainly the SQL requests and the handling of the contact forms).",
     "techno" : "HTML5/CSS3, JavaScript [React], PHP [Wordpress]",
-    "link" : "http://www.wikicreation.fr",
-    "github" : ""
+    "links" : ["http://www.wikicreation.fr"],
+    "githubs" : []
   },
   {
     "title" : "Gaîté Nomade",
     "picSmall" : "gaite-small.jpg",
     "picLarge" : "gaite-large.jpg",
-    "desc" : "A website prototype I made with a very talented graphic designer friend for La Gaîté Lyrique (a parisian digital arts and modern music centre). It allows to locate events on a geolocalised map made from topographic data. The informations appears in windows that can be dragged around, closed and maximized.",
+    "desc" : "A website prototype I made with a very talented graphic designer friend for La Gaîté Lyrique (a Parisian digital arts and modern music centre). It locates events within the city of Paris on a geolocalised map made from topographic data. The information appears in windows that can be dragged around, closed and maximized.",
     "techno" : "HTML5/CSS3, JavaScript [D3, Inferno]",
-    "link" : "http://www.thibaultgoehringer.com/gaite",
-    "github" : "https://github.com/beurkinger/GaiteNomade"
+    "links" : ["http://www.thibaultgoehringer.com/gaite"],
+    "githubs" : ["https://github.com/beurkinger/GaiteNomade"]
   },
   {
     "title" : "Windows96",
     "picSmall" : "windows96-small.jpg",
     "picLarge" : "windows96-large.jpg",
-    "desc" : "At one point in my life I decided that it would be a great idea to remake Windows 95 in a web browser. This was supposed to become an arty project in which the user was allowed to explore the data an old computer full of strange files left behind by the previous owner. I never got around to finish it, but I still made a nice functionnal window manager.",
+    "desc" : "At one point in my life I decided that it would be a great idea to remake Windows 95 in a web browser. This was supposed to be an arty project in which the user was allowed to explore the data an old computer full of strange files left behind by the previous owner. I never got around to finish it, but I still made a nice functional window manager.",
     "techno" : "HTML5/CSS3, JavaScript [Angular]",
-    "link" : "http://www.thibaultgoehringer.com/window96",
-    "github" : "https://github.com/beurkinger/windows96"
+    "links" : ["http://www.thibaultgoehringer.com/window96"],
+    "githubs" : ["https://github.com/beurkinger/windows96"]
   },
   {
     "title" : "SaaS for Travel Agencies",
     "picSmall" : "travel-small.jpg",
     "picLarge" : "travel-large.jpg",
-    "desc" : "A huge project I worked on for two years as a full-stack developer. It is meant to be a all-in-one SaaS solution that allows travel agencies to easily create custom-made travels for their customers by relying on a database of places, hotels and services. The software generate custom websites and PDF documents that can be easily shared with the customer so he can visualize different informations (itinerary, hotels, activities, costs...) about his travel. The solution also allows agencies to estimate the expenses and gains related to each creation, and to create a personal profile for each customer that helps them provide better services. It has been conceived a single-page Angular application wich communicates with a high-performance RESTful Symfony backend. I coded a great part of the application, which gave me a precious insight into the two frameworks that were used in its making. It's an ongoing project still under development.",
+    "desc" : "A huge project I worked on for two years as a full-stack developer. It is meant to be a all-in-one SaaS solution that allows travel agencies to easily create custom-made travel plans for their customers by relying on a database of places, hotels and services. The software generates custom websites and PDF documents that can be easily shared with the customer so he can visualize different information (itinerary, hotels, activities, costs...) regarding his travel. The solution also allows agencies to estimate the expenses and gains related to each creation, and to create a personal profile for each customer that helps them provide better services. It was conceived as a single-page Angular application which communicates with a high-performance RESTful Symfony backend. I coded a great part of the application, which gave me a unique insight into the two frameworks that were used in its making. It's an ongoing project still under development.",
     "techno" : "HTML5/CSS3 [Bootstrap], JavaScript [Angular], PHP[Symfony]",
-    "link" : "",
-    "github" : ""
+    "links" : [],
+    "githubs" : []
   },
   {
     "title" : "Tessier-Ashpool",
     "picSmall" : "memphis-small.jpg",
     "picLarge" : "memphis-large.jpg",
-    "desc" : "A fake blog I made around 2012 to toy around with HTML5/CSS and PHP. Its theme was inspired by the Memphis movement (80's italian design).",
+    "desc" : "A fake blog I made around 2012 to toy around with HTML5/CSS and PHP. Its theme was inspired by the Memphis movement (80's Italian design).",
     "techno" : "HTML5/CSS3, JavaScript, PHP",
-    "link" : "http://www.thibaultgoehringer.com/memphis",
-    "github" : ""
+    "links" : ["http://www.thibaultgoehringer.com/memphis"],
+    "githubs" : ""
   },
   {
     "title" : "Yahoo RSS Reader",
     "picSmall" : "yahoo-small.jpg",
     "picLarge" : "yahoo-large.jpg",
-    "desc" : "An RSS reader dedicated to Yahoo News I made some years ago as a way to learn JavaScript. Sadly since then RSS has fallen out of grace and Yahoo is slowly pulling the plug on its RSS service. That means a lot of the website's categories don't have content anymore, and Yahoo RSS Reader now stands silently as the digital remains of a gone-by era.",
+    "desc" : "An RSS reader dedicated to Yahoo News I made some years ago as a way to learn JavaScript. Sadly since then RSS has fallen out of grace and Yahoo is slowly pulling the plug on its RSS service. That means a lot of the website's categories don't have content anymore, and and this RSS reader now stands silently as the digital remains of a gone-by era.",
     "techno" : "HTML5/CSS3, JavaScript [JQuery], PHP",
-    "link" : "http://www.thibaultgoehringer.com/yahoo",
-    "github" : ""
+    "links" : ["http://www.thibaultgoehringer.com/yahoo"],
+    "githubs" : []
   }
 ]

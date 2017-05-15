@@ -125,6 +125,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 
 #main {
   box-sizing: border-box;
+  padding: 40px 60px;
 }
 
 #main h2 {
@@ -229,7 +230,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   background: #FFF;
 }
 
-#projects .selector {
+#projects .browser {
   /*border-width: 1px;
   border-color: #000;
   border-style: solid;*/
@@ -239,32 +240,85 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
   padding: 12px 8px;*/
 }
 
-#projects .selector * {
+#projects .browser * {
     vertical-align: middle;
 }
 
-#projects .selector:after {
+#projects .browser:after {
   display: block; width: 0; height: 0;
   content: '';
   clear: both;
 }
 
-
-#projects .selector select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearence: none;
-  outline: 0;
-  font: bold 18px Roboto, Helvetica, Sans-Serif;
+#projects .project-select {
   display: inline-block;
-  padding: 0;
-  border: 0;
   margin: 20px 0 0 20px;
 }
 
-#projects .selector select:hover {
+#projects .project-select span {
+  font: bold 18px Roboto, Helvetica, Sans-Serif;
+}
+
+#projects .project-select span:hover {
   cursor: pointer;
 }
+
+#projects .project-select span:hover {
+  cursor: pointer;
+}
+
+#projects .project-select i {
+  display: inline-block;
+  margin-left: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8.7px 5px 0 5px;
+  border-color: #000 transparent transparent transparent;
+}
+
+#projects .project-select.open i {
+  border-width: 0 5px 8.7px 5px;
+  border-color: transparent transparent #000 transparent;
+}
+
+
+#projects .project-select div {
+  z-index: 100;
+  display: none;
+  position: fixed; top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: transparent;
+}
+
+#projects .project-select.open div {
+  display: block;
+}
+
+#projects .project-select ul {
+  z-index: 150;
+  position: absolute;
+  display: none;
+  padding: 0; margin: 6px 0 0 0;
+  list-style: none;
+  border: 1px solid black;
+  background: #FFF;
+  padding: 5px;
+}
+
+#projects .project-select.open ul {
+  display: block;
+}
+
+#projects .project-select li {
+  padding: 5px 10px;
+}
+
+#projects .project-select li:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 
 #projects .arrows {
   /*display: inline-block;*/

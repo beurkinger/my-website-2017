@@ -3,7 +3,7 @@ import Component from 'inferno-component';
 import httpRequestHelper from '../helpers/httpRequestHelper';
 import ProjectDetails from './ProjectDetails';
 import ProjectPic from './ProjectPic';
-import ProjectSelector from './ProjectSelector';
+import ProjectBrowser from './ProjectBrowser';
 import {REST_PROJECTS_PATH} from '../constants';
 
 class Projects extends Component {
@@ -38,11 +38,11 @@ class Projects extends Component {
   getProjectDetails () {
     if (this.state.projects.length > 0 && this.state.projects[this.state.selected]) {
       let data = this.state.projects[this.state.selected];
-      return <ProjectDetails title={data.title}
-                      desc={data.desc}
-                      techno={data.techno}
-                      link={data.link}
-                      github={data.github} />
+      return <ProjectDetails  title={data.title}
+                              desc={data.desc}
+                              techno={data.techno}
+                              links={data.links}
+                              githubs={data.githubs} />
     }
   }
 
@@ -52,13 +52,13 @@ class Projects extends Component {
         <h2>Projects</h2>
         <p>
           A selection of things I've worked on during the last
-          years, professionnally or in my spare time. Select a
+          years, professionally or in my spare time. Select a
           project in the list to see it, or use the arrow flip through
           all the projects.
         </p>
         <div class="projects-browser">
           { this.getProjectPic() }
-          <ProjectSelector  projects={this.state.projects}
+          <ProjectBrowser  projects={this.state.projects}
                             selected={this.state.selected}
                             changeHandler={this.handleChange}
                              />

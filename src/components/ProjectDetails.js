@@ -1,22 +1,36 @@
 import Inferno from 'inferno';
 
-const getGithub = (github) => {
-  if (github && github.trim() !== '') {
+const removeHttp = string => {
+  return string.replace(/http\:\/\/|https\:\/\//gi, "");
+}
+
+const getAElt = (path, i, elts) => {
+  if (path && path.trim() !== '') {
+    return (
+      <span>
+        <a href={path} target="_blank">{removeHttp(path)}</a>
+        { i + 1 < elts.length ? ', ' : ''}
+      </span>)
+  }
+}
+
+const getGithubs = githubs => {
+  if (githubs && githubs.length > 0) {
     return (
       <li>
         <strong>Github : </strong>
-        <a href={github} target="_blank">{github}</a>
+        {githubs.map(getAElt)}
       </li>
     )
   }
 }
 
-const getLink = (link) => {
-  if (link && link.trim() !== '') {
+const getLinks = links => {
+  if (links && links.length > 0) {
     return (
       <li>
         <strong>See : </strong>
-        <a href={link} target="_blank">{link}</a>
+        {links.map(getAElt)}
       </li>
     )
   }
@@ -32,8 +46,8 @@ const ProjectDetails = props => (
         <strong>Techno used : </strong>
         {props.techno}
       </li>
-      {getLink(props.link)}
-      {getGithub(props.github)}
+      {getLinks(props.links)}
+      {getGithubs(props.githubs)}
     </ul>
   </div>
 )
