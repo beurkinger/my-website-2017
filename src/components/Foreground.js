@@ -6,13 +6,18 @@ import Header from './Header';
 import Main from './Main';
 
 class Foreground extends Component {
-  shouldComponentUpdate () { return false; }
+  shouldComponentUpdate (nextProps) {
+    if (parseInt(this.props.titleBling) !== parseInt(nextProps.titleBling)) return true;
+    return false;
+  }
 
   render () {
     return (
-      <div id="foreground" onMouseMove={this.props.moveHandler}>
+      <div id="foreground"  onMouseMove={this.props.moveHandler}
+                            onTouchMove={this.props.moveHandler} 
+                            onScroll={this.props.scrollHandler}>
         <div id="main-container">
-          <Header/>
+          <Header titleBling={this.props.titleBling} />
           <Main />
           <Footer />
         </div>

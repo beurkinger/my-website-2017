@@ -22,6 +22,45 @@ body, input, textarea, button, select {
   display: block; height: 0; width: 0; clear: both;
 }
 
+/*Grid system - start */
+
+[class*='grid'],
+[class*='col-'] {
+  box-sizing: border-box;
+}
+
+.row {
+    display: block; padding: 0; width: 100%;
+}
+
+.row:after {
+  content: "";
+	display: block; width: 0; height: 0;
+	clear: both;
+}
+
+.col-1-2 {
+  float: left;
+  width: 46%;
+}
+
+.col-1-2:first-child {
+  margin-right: 4%;
+}
+
+.col-1-2:last-child {
+  margin-left: 4%;
+}
+
+@media handheld, only screen and (max-width: 767px) {
+  [class*='col-'] {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/*Grid system - end */
+
 #app {
   position: fixed; top:0; left: 0;
   height: 100%; width: 100%;
@@ -65,7 +104,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 
 #header {
   box-sizing: border-box;
-  padding: 40px 60px 20px 60px;
+  padding: 60px 60px 20px 60px;
 }
 
 /*header:after {
@@ -93,7 +132,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 }
 
 #menu {
-  margin-top: 10px;
+  margin-top: 6px;
   display: inline-block;
   float: right;
 }
@@ -105,7 +144,7 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 
 #menu li {
   display: block;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
 }
 
 #menu li:last-child {
@@ -115,12 +154,15 @@ background: linear-gradient(to left, #00C9FF , #92FE9D); /* W3C, IE 10+/ Edge, F
 #menu a {
   display: block;
   padding: 9px 22px 8px 22px;
-  font: bold 16px Roboto, Helvetica, Sans-Serif; color: inherit;
+  font: bold 18px Roboto, Helvetica, Sans-Serif; color: inherit;
   line-height: 100%; text-align: center; text-decoration: none;
 }
 
 #menu a:hover {
-  color: #00FF00;
+  /*color: #00FF00;*/
+  background: #000;
+  color: #FFF;
+  /*text-decoration: line-through;*/
 }
 
 #main {

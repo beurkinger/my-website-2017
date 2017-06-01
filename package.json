@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "webpack",
+    "build-prod" : "webpack --config webpack.config.prod.js",
     "start": "webpack-dev-server"
   },
   "repository": {
