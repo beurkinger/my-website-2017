@@ -25,6 +25,7 @@ class ProjectPic extends Component {
     return (
       <div className="project-pic">
         <img  src={IMG_PATH + this.props.picSmall}
+              alt={this.props.alt}
               onClick={ e => this.setState({'display' : true})}
               className="pic-small" />
         {this.getLargePic()}

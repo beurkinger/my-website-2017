@@ -31,7 +31,8 @@ class Projects extends Component {
     if (this.state.projects.length > 0 && this.state.projects[this.state.selected]) {
       let data = this.state.projects[this.state.selected];
       return <ProjectPic  picSmall={data.picSmall}
-                          picLarge={data.picLarge} />
+                          picLarge={data.picLarge}
+                          alt={data.title} />
     }
   }
 
