@@ -12,7 +12,7 @@ class Footer extends Component {
           Website designed and coded by me, using the {" "}
           <a href="https://infernojs.org/">Inferno</a> framework. <br/>
           The source code is avalaible on this {" "}
-          <a href="https://github.com/beurkinger/PersonalWebsite" target="_blank">
+          <a href="https://github.com/beurkinger/my-website-2017" target="_blank">
             GitHub repository
           </a>.
         </p>

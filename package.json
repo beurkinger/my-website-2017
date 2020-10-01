@@ -1,5 +1,5 @@
 {
-  "name": "personal-website",
+  "name": "my-website-2017",
   "version": "1.0.0",
   "description": "My personal website.",
   "main": "index.html",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beurkinger/PersonalWebsite.git"
+    "url": "git+https://github.com/beurkinger/my-website-2017.git"
   },
   "keywords": [
     "Goehringer"
@@ -18,9 +18,9 @@
   "author": "Thibault Goehringer",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/beurkinger/PersonalWebsite/issues"
+    "url": "https://github.com/beurkinger/my-website-2017/issues"
   },
-  "homepage": "https://github.com/beurkinger/PersonalWebsite#readme",
+  "homepage": "https://github.com/beurkinger/my-website-2017#readme",
   "dependencies": {
     "inferno": "^1.5.6",
     "inferno-component": "^1.5.6"
